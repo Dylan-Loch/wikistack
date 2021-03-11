@@ -1,7 +1,8 @@
 const html = require("html-template-tag");
 const layout = require("./layout");
 
-module.exports = () => layout(html`
+module.exports = () =>
+  layout(html`
   <h3>Add a Page</h3>
   <hr>
   <form method="POST" action="/wiki/">
@@ -19,7 +20,7 @@ module.exports = () => layout(html`
 
     <div>PLACEHOLDER FOR PAGE CONTENT TEXTAREA FIELD</div>
     
-    <div>PLACEHOLDER FOR PAGE STATUS INPUT FIELD</div>
+    <div>PLACEHOLDER FOR PAGE STATUS INPUT FIELD</di
 
     <div class="col-sm-offset-2 col-sm-10">
       <button type="submit" class="btn btn-primary">submit</button>
