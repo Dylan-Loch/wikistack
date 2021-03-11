@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 // const db = new Sequelize('postgres://localhost:5432/wikistack');
 const db = new Sequelize(
-  "postgres://postgres:137952468@localhost:5432/wikistack",
+  "postgres://localhost:5432/wikistack",
   { logging: false }
 );
 
@@ -21,7 +21,7 @@ const Page = db.define("page", {
   status: { type: Sequelize.ENUM("open", "closed"), defaultValue: "open" },
 });
 
-console.log(db);
+// console.log(db);
 
 module.exports = {
   db,

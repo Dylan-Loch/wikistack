@@ -6,13 +6,6 @@ const wikiRouter = require("./routes/wiki");
 // const userRouter = require(".routes/users");
 const addPage = require("./views/addPage");
 
-app.use("/wiki", wikiRouter);
-// app.use("/user", userRouter);
-
-db.authenticate().then(() => {
-  console.log("connected to the database");
-});
-
 app.use(express.urlencoded({ extended: false }));
 
 app.use(morgan("dev"));
@@ -20,6 +13,12 @@ app.use(express.static(__dirname + "/public"));
 
 app.get("/", (req, res) => {
   res.redirect("/wiki");
+});
+app.use("/wiki", wikiRouter);
+// app.use("/user", userRouter);
+
+db.authenticate().then(() => {
+  console.log("connected to the database");
 });
 
 const init = async () => {

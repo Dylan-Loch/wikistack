@@ -14,10 +14,17 @@ router.get("/add", (req, res, next) => {
   res.send(addPage());
 });
 
-// router.post("/add", (req, res, next) => {
-//   let title = req.body.title;
-
-//   res.send("");
-// });
+router.post("/add", async (req, res, next) => {
+  try {
+    // const Page = ({ title, content})
+    console.log(req.body);
+    const title = await [req.body.title]
+    console.log("Request-------------------------------------------------------------------------->", title);
+    res.json(title);
+    // res.redirect("/")
+  } catch (error) {
+    next(error);
+  }
+});
 
 module.exports = router;
